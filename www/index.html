@@ -153,14 +153,12 @@
     var active = false;
     var startTime = 0;
     var period = 0;
-
     
     // ボタンの初期設定
     function init(){
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
-        $('#btnC').prop('disabled', false);
-        
+        $('#btnC').prop('disabled', false);     
     }
 
     // Alarmの処理
@@ -181,13 +179,15 @@
     function btnAClick(e){
         active = true;
         startTime = new Date();
-        
+        $("#btnA").prop("disabled", true);
+        $("#btnB").prop("disabled", false);
     }
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
-
+        $("#btnA").prop("disabled", false);
+        $("#btnB").prop("disabled", true);
     }
 
     // ButtonCがクリックされた時の処理
